@@ -1,15 +1,15 @@
 @import-normalize; /* bring in normalize.css styles */
 
 :root {
-  font-family: Montserrat, Inter, system-ui, Avenir, Helvetica, Arial,
-    sans-serif;
-  line-height: 1.2;
-  font-weight: 500;
-  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 14px;
+  box-sizing: border-box;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark;
   color: rgba(235, 216, 255, 1);
-  background-color: #ebd8ff;
+  background-color: #ebd8ff; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,6 +21,8 @@
 body {
   width: 100%;
   margin: 0 auto;
+
+  background-color: #fefcff;
 }
 
 ul {
@@ -42,4 +44,10 @@ p {
 
 button {
   cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
