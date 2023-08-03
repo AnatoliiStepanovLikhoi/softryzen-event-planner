@@ -5,7 +5,6 @@ import {
   Input,
   InputContainer,
   SearchIcon,
-  BottomLine,
 } from "./Header.styled";
 
 const Header = () => {
@@ -18,7 +17,7 @@ const Header = () => {
           <SearchIcon />
         </InputContainer>
       </HeaderContainer>
-      <BottomLine />
+      {/* <BottomLine /> */}
     </HeaderBackground>
   );
 };
