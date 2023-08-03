@@ -20,6 +20,19 @@ export const HeaderContainer = styled.div`
     width: 680px;
   }
 `;
+
+export const HeaderTopWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media ${device.tablet} {
+    /* display: flex;
+    align-items: center;
+    width: 680px; */
+  }
+`;
+
 export const Logo = styled.h2`
   font-family: Alata;
   font-size: 24px;
@@ -98,7 +111,7 @@ export const SearchIcon = styled(FiSearch)`
   top: 12px;
   left: 12px;
 
-  z-index: 1;
+  /* z-index: 1; */
 
   @media ${device.tablet} {
     top: 8px;

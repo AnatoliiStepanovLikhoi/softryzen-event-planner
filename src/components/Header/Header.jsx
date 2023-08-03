@@ -5,13 +5,18 @@ import {
   Input,
   InputContainer,
   SearchIcon,
+  HeaderTopWrapper,
 } from "./Header.styled";
+import LanguageSelect from "../LanguageSelect/LanguageSelect";
 
 const Header = () => {
   return (
     <HeaderBackground>
       <HeaderContainer>
-        <Logo>Event Planner</Logo>
+        <HeaderTopWrapper>
+          <Logo>Event Planner</Logo>
+          <LanguageSelect />
+        </HeaderTopWrapper>
         <InputContainer>
           <Input placeholder="Search by keywords" />
           <SearchIcon />
