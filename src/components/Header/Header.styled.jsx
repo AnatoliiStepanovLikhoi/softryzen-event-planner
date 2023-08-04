@@ -14,46 +14,49 @@ export const HeaderContainer = styled.div`
   width: 320px;
   margin: 0 auto;
 
+  display: grid;
+  gap: 24px;
+  grid-template-areas:
+    "a a b"
+    "c c c";
+
   @media ${device.tablet} {
-    display: flex;
-    align-items: center;
-    width: 680px;
+    gap: 24px;
+    grid-template-areas: "a c b";
+    grid-template-columns: 1fr 368px 69px;
+
+    width: 768px;
+    padding: 26px 40px;
+  }
+
+  @media ${device.desktop} {
+    grid-template-columns: 1fr 410px 69px;
+
+    width: 1280px;
+    padding: 22px 4px;
   }
 `;
 
-export const HeaderTopWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media ${device.tablet} {
-    /* display: flex;
-    align-items: center;
-    width: 680px; */
-  }
+export const LanguageSelectContainer = styled.div`
+  grid-area: b;
+  justify-self: end;
+  outline: none;
 `;
 
-export const Logo = styled.h2`
+export const Logo = styled.h1`
   font-family: Alata;
   font-size: 24px;
   font-weight: 400;
   line-height: 1.38;
+  grid-area: a;
+  align-self: center;
 
   color: ${(props) => props.theme.colors.accent};
-
-  @media ${device.tablet} {
-    margin-right: 80px;
-  }
-
-  @media ${device.desktop} {
-    margin-right: 623px;
-    white-space: nowrap;
-  }
 `;
 
 export const InputContainer = styled.div`
-  margin-top: 31px;
   position: relative;
+  grid-area: c;
 
   @media ${device.tablet} {
     margin-top: 0;
@@ -71,6 +74,7 @@ export const Input = styled.input`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  outline: none;
 
   padding: 12px 12px 12px 48px;
   width: 272px;
@@ -96,7 +100,7 @@ export const Input = styled.input`
   }
 
   @media ${device.desktop} {
-    max-width: 410px;
+    width: 410px;
     justify-content: center;
     align-items: center;
   }
@@ -119,7 +123,7 @@ export const SearchIcon = styled(FiSearch)`
   }
 
   @media ${device.desktop} {
-    top: 40px;
-    left: 871px;
+    top: 12px;
+    /* left: 871px; */
   }
 `;

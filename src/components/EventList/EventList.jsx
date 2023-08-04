@@ -1,5 +1,6 @@
 import useEventStore from "../../services/eventStore";
 import { useEffect } from "react";
+import { EventListWrapper } from "./EventList.styled";
 
 const EventList = () => {
   const events = useEventStore((state) => state.items);
@@ -20,11 +21,11 @@ const EventList = () => {
   }
 
   return (
-    <div>
+    <EventListWrapper>
       {events.map((event) => (
-        <div key={event.id}>{event.title}</div>
+        <li key={event.id}>{event.title}</li>
       ))}
-    </div>
+    </EventListWrapper>
   );
 };
 

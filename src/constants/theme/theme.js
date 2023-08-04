@@ -35,6 +35,7 @@ const theme = Object.freeze({
     input: {
       bg: "#FFFFFF",
       sortInputText: "#3F3F3F",
+      sortInputTextInactive: "#aca7c3",
       placeholderColor: "#888888",
       inputShadow: "2px 4px 9px 0px rgba(166, 141, 174, 0.28);",
     },

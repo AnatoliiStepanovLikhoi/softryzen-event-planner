@@ -1,13 +1,16 @@
 import { NavLink } from "react-router-dom";
 import EventList from "../../components/EventList/EventList";
+import { MainSection, MainFilterWrapper, MainTitle } from "./MainPage.styled";
 
 const MainPage = () => {
   return (
-    <div>
-      <h2>My events</h2>
-      <NavLink to="/create">Create</NavLink>
+    <MainSection>
+      <MainFilterWrapper>
+        <NavLink to="/create">Create</NavLink>
+      </MainFilterWrapper>
+      <MainTitle>My events</MainTitle>
       <EventList />
-    </div>
+    </MainSection>
   );
 };
 

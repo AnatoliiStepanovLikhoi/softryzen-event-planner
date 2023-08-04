@@ -7,7 +7,7 @@ const SharedLayout = () => {
   return (
     <>
       <Header />
-      <main style={{ flexGrow: "1", zIndex: "1" }}>
+      <main style={{ flexGrow: "1" }}>
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
