@@ -2,13 +2,14 @@ import {
   HeaderBackground,
   HeaderContainer,
   Logo,
-  Input,
+  // Input,
   InputContainer,
   SearchIcon,
   // HeaderTopWrapper,
   LanguageSelectContainer,
 } from "./Header.styled";
 import LanguageSelect from "../LanguageSelect/LanguageSelect";
+import SearchInput from "../SearchInput/SearchInput";
 
 const Header = () => {
   return (
@@ -22,7 +23,7 @@ const Header = () => {
 
         {/* </HeaderTopWrapper> */}
         <InputContainer>
-          <Input placeholder="Search by keywords" />
+          <SearchInput placeholder="Search by keywords" />
           <SearchIcon />
         </InputContainer>
       </HeaderContainer>
