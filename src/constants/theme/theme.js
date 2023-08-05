@@ -8,9 +8,10 @@ const theme = Object.freeze({
     accent: "#7B61FF",
 
     button: {
-      default: "#9747FF",
+      default: "#7B61FF",
       hover: "#6243FF",
       disable: "#ACA7C3",
+      title: "#FFFFFF",
     },
 
     pagination: {
@@ -23,6 +24,7 @@ const theme = Object.freeze({
 
     card: {
       bg: "#ffffff",
+      bgSecondary: "rgba(255, 255, 255, 0.8)",
       textTitle: "#1C1B1F",
       textDesc: "#49454F",
       textDate: "#7B61FF",
@@ -30,6 +32,8 @@ const theme = Object.freeze({
       textPriorityLow: "#7B61FF",
       textPriorityMedium: "#E2A300",
       textPriorityHigh: "#FF2B77",
+      cardShadow: "2px 4px 9px 0px rgba(166, 141, 174, 0.28);",
+      iconActive: "#7B61FF",
     },
 
     input: {

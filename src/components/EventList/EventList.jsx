@@ -1,6 +1,7 @@
 import useEventStore from "../../services/eventStore";
 import { useEffect } from "react";
 import { EventListWrapper } from "./EventList.styled";
+import { EventCard } from "../EventCard/EventCard";
 
 const EventList = () => {
   const events = useEventStore((state) => state.items);
@@ -20,10 +21,12 @@ const EventList = () => {
     return <div>Error: {error}</div>;
   }
 
+  console.log(events);
+
   return (
     <EventListWrapper>
-      {events.map((event) => (
-        <li key={event.id}>{event.title}</li>
+      {events?.map((event) => (
+        <EventCard key={event.id} event={event} />
       ))}
     </EventListWrapper>
   );

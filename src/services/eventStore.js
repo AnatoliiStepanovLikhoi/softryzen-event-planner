@@ -2,17 +2,17 @@ import { create } from "zustand";
 
 const useEventStore = create((set) => ({
   items: [
-    {
-      id: 1,
-      title: "The Beatles party",
-      description: "This event for all people",
-      selectDate: "15/10/2023",
-      selectTime: "18:00",
-      location: "Kharkiv,Mysonositskya str",
-      category: "Art",
-      addPicture: "",
-      priority: "high",
-    },
+    // {
+    //   id: 1,
+    //   title: "The Beatles party",
+    //   description: "This event for all people",
+    //   selectDate: "15/10/2023",
+    //   selectTime: "18:00",
+    //   location: "Kharkiv,Mysonositskya str",
+    //   category: "Art",
+    //   addPicture: "",
+    //   priority: "high",
+    // },
   ],
   isLoading: false,
   error: null,
