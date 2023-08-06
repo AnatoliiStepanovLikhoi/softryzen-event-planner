@@ -31,6 +31,8 @@ export const EventCard = ({ event }) => {
 
   const formatedDateTime = formatDateTime(selectDate, selectTime);
 
+  console.log(priority);
+
   return (
     <Card>
       <CardDetails>
@@ -40,7 +42,7 @@ export const EventCard = ({ event }) => {
         />
         <CateroryWrapper>
           <Category>{category}</Category>
-          <Priority>{priority}</Priority>
+          <Priority $priority={`${priority}`}>{priority}</Priority>
         </CateroryWrapper>
 
         <CardWrapper>

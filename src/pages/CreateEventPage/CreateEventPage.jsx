@@ -4,8 +4,9 @@ import useEventStore from "../../services/eventStore";
 import { MainSection } from "../MainPage/MainPage.styled";
 import { CreateEventTitle } from "./CreateEventPage.styled";
 import AddEventForm from "../../components/AddEventForm/AddEventFrom";
+import { BackButton } from "../../components/BackButton/BackButton";
 
-import Datetime from "react-datetime";
+// import Datetime from "react-datetime";
 
 import "react-datetime/css/react-datetime.css";
 
@@ -55,6 +56,7 @@ const CreateEventPage = () => {
 
   return (
     <MainSection>
+      <BackButton />
       <CreateEventTitle>Create new event</CreateEventTitle>
       <AddEventForm />
 

@@ -64,6 +64,16 @@ export const Priority = styled.p`
   line-height: 1.42;
   border-radius: 8px;
   background-color: ${(props) => props.theme.colors.card.bg};
+
+  color: ${(props) => {
+    if (props.$priority === "High") {
+      return props.theme.colors.high;
+    } else if (props.$priority === "Medium") {
+      return props.theme.colors.medium;
+    } else {
+      return props.theme.colors.low;
+    }
+  }};
 `;
 
 export const LocationWrapper = styled.div`

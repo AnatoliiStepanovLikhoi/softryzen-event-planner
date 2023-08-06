@@ -44,8 +44,9 @@ export const StyledForm = styled.form`
   @media ${device.desktop} {
     height: 490px;
     padding: 40px;
-    grid-template-columns: repeat(3, 332px);
+    grid-template-columns: repeat(3, 372px);
     grid-template-rows: repeat(3, 80px);
+    column-gap: 42px;
   }
 `;
 
@@ -140,8 +141,6 @@ export const SelectWrap = styled.div`
     position: absolute;
     right: 15px;
     top: 15px;
-
-    pointer-events: none;
 
     transition: 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
   }

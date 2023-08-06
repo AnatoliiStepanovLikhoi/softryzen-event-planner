@@ -13,7 +13,7 @@ import {
   SelectWrap,
 } from "./AddEventFrom.styled";
 import { RiArrowDownSLine } from "react-icons/ri";
-import { VscClose } from "react-icons/vsc";
+import { IoClose } from "react-icons/io5";
 
 const validationRules = {
   title: {
@@ -76,14 +76,15 @@ const AddEventForm = () => {
   const {
     register,
     handleSubmit,
-    // reset,
-    // setValue,
-    formState: { errors },
+    reset,
+    setValue,
+    formState: { errors, dirtyFields, isValid, isDirty },
   } = useForm({ mode: "onChange" });
 
-  //   const handleDeleteInput = (field) => {
-  //     setValue(field, "");
-  //   };
+  const handleClearInput = (fieldName) => {
+    console.log("push", fieldName);
+    setValue(fieldName, "");
+  };
 
   const onSubmit = async (data) => {
     try {
@@ -95,16 +96,14 @@ const AddEventForm = () => {
     }
   };
 
-  const onCloseClick = () => {};
-
   return (
     <>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <LabelStyled>
           Title
           <SelectWrap>
-            <VscClose
-              onClick={onCloseClick}
+            <IoClose
+              onClick={() => handleClearInput("title")}
               size="24"
               color={errors.title ? "#FF2B77" : "#7b61ff"}
             />
@@ -124,7 +123,8 @@ const AddEventForm = () => {
         <LabelStyled style={{ gridRowStart: 2, gridRowEnd: 4 }}>
           Description
           <SelectWrap>
-            <VscClose
+            <IoClose
+              onClick={() => handleClearInput("description")}
               size="24"
               color={errors.description ? "#FF2B77" : "#7b61ff"}
             />
@@ -172,7 +172,8 @@ const AddEventForm = () => {
         <LabelStyled>
           Location
           <SelectWrap>
-            <VscClose
+            <IoClose
+              onClick={() => handleClearInput("location")}
               size="24"
               color={errors.location ? "#FF2B77" : "#7b61ff"}
             />
@@ -211,7 +212,11 @@ const AddEventForm = () => {
         <LabelStyled style={{ color: "#ACA7C3" }}>
           Add picture
           <SelectWrap>
-            <VscClose size="24" color="#ACA7C3" />
+            <IoClose
+              size="24"
+              color="#ACA7C3"
+              onClick={() => handleClearInput("description")}
+            />
             <InputStyled
               placeholder="Input"
               disabled
@@ -237,7 +242,12 @@ const AddEventForm = () => {
           </SelectWrap>
         </LabelStyled>
         {/* <Button option="button" type="submit" title={btnTitle} /> */}
-        <button type="submit">Save</button>
+        <button
+          type="submit"
+          disabled={!isValid || Object.keys(dirtyFields).length === 6}
+        >
+          {Object.keys(dirtyFields).length === 7 ? "Save" : "Add event"}
+        </button>
       </StyledForm>
     </>
   );

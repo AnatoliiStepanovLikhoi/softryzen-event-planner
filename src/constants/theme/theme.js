@@ -7,6 +7,9 @@ const theme = Object.freeze({
     textTitle: "#1C1B1F",
     categoryTitle: "#3F3F3F",
     accent: "#7B61FF",
+    high: "#FF2B77",
+    medium: "#E2A300",
+    low: "#6BD475",
 
     button: {
       default: "#7B61FF",
