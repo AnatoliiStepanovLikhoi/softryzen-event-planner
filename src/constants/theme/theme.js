@@ -2,6 +2,7 @@ const theme = Object.freeze({
   colors: {
     // global
     background: "#FEFCFF",
+    backgroundWhite: "#FFFFFF",
     text: "#49454F",
     textTitle: "#1C1B1F",
     categoryTitle: "#3F3F3F",
@@ -66,20 +67,6 @@ const theme = Object.freeze({
     //   textBtnCancelHover: "#fafafa",
     //   bgBtnCancel: "#D9D9D9",
     //   borderBtnCancel: "#23262A",
-    // },
-
-    // // header
-    // header: {
-    //   textMain: "#23262a",
-    //   textSecondary: "#22252a",
-    //   iconMenu: "#22252a",
-    //   iconSearch: "#22252a",
-    //   bgAccent: "#ebf3d4",
-    //   accent: "#8baa36",
-    //   mainPageTextColor: "#1E1F28",
-    //   mainPageIconColor: "#1E1F28",
-    //   // iconMenuHover: '#8baa36',
-    //   // iconSearchHover: '#8baa36',
     // },
   },
 

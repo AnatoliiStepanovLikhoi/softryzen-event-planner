@@ -13,6 +13,7 @@ import {
   CardInfoWrapper,
   MoreInfoButton,
 } from "./EventCard.styled";
+import defaultImage from "../../assets/default.png";
 
 import { formatDateTime } from "../../services/formatDate";
 
@@ -33,7 +34,10 @@ export const EventCard = ({ event }) => {
   return (
     <Card>
       <CardDetails>
-        <CardImage src={picture} alt={title} />
+        <CardImage
+          src={Object.keys(picture).length > 0 ? picture : defaultImage}
+          alt={title ?? "event default image"}
+        />
         <CateroryWrapper>
           <Category>{category}</Category>
           <Priority>{priority}</Priority>
