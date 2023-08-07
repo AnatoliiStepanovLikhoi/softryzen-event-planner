@@ -115,15 +115,12 @@ export const SearchIcon = styled(FiSearch)`
   top: 12px;
   left: 12px;
 
-  /* z-index: 1; */
-
   @media ${device.tablet} {
-    top: 8px;
+    /* top: 8px; */
     left: 12px;
   }
 
   @media ${device.desktop} {
     top: 12px;
-    /* left: 871px; */
   }
 `;

@@ -15,7 +15,7 @@ const EventList = () => {
   }, [fetchEvents]);
 
   const filteredEvents = events.filter((event) =>
-    event.title.toLowerCase().includes(filterValue.toLowerCase())
+    event.title.toLowerCase().includes(filterValue.trim().toLowerCase())
   );
 
   if (isLoading) {
@@ -26,7 +26,7 @@ const EventList = () => {
     return <div>Error: {error}</div>;
   }
 
-  console.log(events);
+  // console.log(events);
 
   return (
     <EventListWrapper>

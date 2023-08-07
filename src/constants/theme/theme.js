@@ -16,6 +16,7 @@ const theme = Object.freeze({
       hover: "#6243FF",
       disable: "#ACA7C3",
       title: "#FFFFFF",
+      buttonShadow: "2px 4px 9px 0px rgba(166, 141, 174, 0.28)",
     },
 
     pagination: {
@@ -36,7 +37,7 @@ const theme = Object.freeze({
       textPriorityLow: "#7B61FF",
       textPriorityMedium: "#E2A300",
       textPriorityHigh: "#FF2B77",
-      cardShadow: "2px 4px 9px 0px rgba(166, 141, 174, 0.28);",
+      cardShadow: "2px 4px 9px 0px rgba(166, 141, 174, 0.28)",
       iconActive: "#7B61FF",
     },
 

@@ -83,6 +83,7 @@ export const LocationWrapper = styled.div`
   width: 272px;
   padding: 8px 16px;
   background-color: ${(props) => props.theme.colors.card.bgSecondary};
+  color: ${(props) => props.theme.colors.card.textDate};
 
   @media ${device.tablet} {
     width: 332px;
