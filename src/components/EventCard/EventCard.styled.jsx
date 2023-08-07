@@ -55,6 +55,7 @@ export const Category = styled.p`
   line-height: 1.42;
   border-radius: 8px;
   background-color: ${(props) => props.theme.colors.card.bg};
+  color: ${(props) => props.theme.colors.card.textCategory};
 `;
 
 export const Priority = styled.p`
@@ -134,15 +135,34 @@ export const MoreInfoButton = styled.button`
   font-size: 14px;
   font-weight: 500;
   line-height: 1.43;
-
   background-color: ${(props) => props.theme.colors.button.default};
   color: ${(props) => props.theme.colors.button.title};
   border-radius: 8px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+
+  &:hover,
+  &:focus {
+    background-color: ${(props) => props.theme.colors.button.hover};
+  }
 `;
 
 export const CardDetails = styled(NavLink)`
   &:hover .moreInfo,
   &:focus .moreInfo {
     display: block;
+    animation: fadeIn 0.6s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
 `;

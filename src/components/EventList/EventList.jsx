@@ -8,10 +8,15 @@ const EventList = () => {
   const isLoading = useEventStore((state) => state.isLoading);
   const error = useEventStore((state) => state.error);
   const fetchEvents = useEventStore((state) => state.fetchEvents);
+  const filterValue = useEventStore((state) => state.filterValue);
 
   useEffect(() => {
     fetchEvents();
   }, [fetchEvents]);
+
+  const filteredEvents = events.filter((event) =>
+    event.title.toLowerCase().includes(filterValue.toLowerCase())
+  );
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -25,9 +30,13 @@ const EventList = () => {
 
   return (
     <EventListWrapper>
-      {events?.map((event) => (
-        <EventCard key={event.id} event={event} />
-      ))}
+      {filteredEvents.length === 0 ? (
+        <div>No events found.</div>
+      ) : (
+        filteredEvents.map((event) => (
+          <EventCard key={event.id} event={event} />
+        ))
+      )}
     </EventListWrapper>
   );
 };

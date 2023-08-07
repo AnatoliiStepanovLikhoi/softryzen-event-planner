@@ -16,6 +16,8 @@ const useEventStore = create((set) => ({
   ],
   isLoading: false,
   error: null,
+  filterValue: "",
+  setFilterValue: (value) => set({ filterValue: value }),
 
   fetchEvents: async () => {
     set({ isLoading: true });

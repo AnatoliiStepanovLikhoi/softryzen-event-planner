@@ -76,9 +76,9 @@ const AddEventForm = () => {
   const {
     register,
     handleSubmit,
-    reset,
+    // reset,
     setValue,
-    formState: { errors, dirtyFields, isValid, isDirty },
+    formState: { errors, dirtyFields, isValid },
   } = useForm({ mode: "onChange" });
 
   const handleClearInput = (fieldName) => {

@@ -31,8 +31,6 @@ export const EventCard = ({ event }) => {
 
   const formatedDateTime = formatDateTime(selectDate, selectTime);
 
-  console.log(priority);
-
   return (
     <Card>
       <CardDetails>
