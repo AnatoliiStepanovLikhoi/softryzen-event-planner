@@ -17,6 +17,8 @@ const useEventStore = create((set) => ({
   isLoading: false,
   error: null,
   filterValue: "",
+  eventDetails: {},
+  setEventDetails: (details) => set({ eventDetails: details }),
   setFilterValue: (value) => set({ filterValue: value }),
 
   fetchEvents: async () => {
@@ -27,6 +29,19 @@ const useEventStore = create((set) => ({
       );
       const data = await response.json();
       set({ items: data, isLoading: false, error: null });
+    } catch (error) {
+      set({ isLoading: false, error: error.message });
+    }
+  },
+
+  fetchEventById: async (id) => {
+    set({ isLoading: true });
+    try {
+      const response = await fetch(
+        `https://6468ba5260c8cb9a2cb077de.mockapi.io/api/events/${id}`
+      );
+      const data = await response.json();
+      set({ eventDetails: data, isLoading: false, error: null });
     } catch (error) {
       set({ isLoading: false, error: error.message });
     }

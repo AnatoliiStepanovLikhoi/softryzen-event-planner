@@ -19,6 +19,7 @@ import { formatDateTime } from "../../services/formatDate";
 
 export const EventCard = ({ event }) => {
   const {
+    id,
     picture,
     title,
     description,
@@ -29,11 +30,13 @@ export const EventCard = ({ event }) => {
     selectTime,
   } = event;
 
+  const path = `/event/${id}`;
+
   const formatedDateTime = formatDateTime(selectDate, selectTime);
 
   return (
     <Card>
-      <CardDetails>
+      <CardDetails path={path}>
         <CardImage
           src={Object.keys(picture).length > 0 ? picture : defaultImage}
           alt={title ?? "event default image"}
@@ -52,7 +55,9 @@ export const EventCard = ({ event }) => {
           <CardInfoWrapper>
             <CardTitle>{title}</CardTitle>
             <CardDescription>{description}</CardDescription>
-            <MoreInfoButton className="moreInfo">More info</MoreInfoButton>
+            <MoreInfoButton className="moreInfo" to={path}>
+              More info
+            </MoreInfoButton>
           </CardInfoWrapper>
         </CardWrapper>
       </CardDetails>

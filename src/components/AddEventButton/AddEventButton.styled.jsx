@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import { device } from "../../constants/deviceType/deviceType";
 import { NavLink } from "react-router-dom";
-import { FiPlus } from "react-icons/fi";
+import { BsPlusLg } from "react-icons/bs";
 
 export const AddEventBtn = styled(NavLink)`
   display: flex;
-  padding: 16px;
   justify-content: center;
   align-items: center;
   gap: 16px;
+
+  padding: 16px;
+  margin-left: 24px;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 500;
@@ -28,7 +30,7 @@ export const AddEventBtn = styled(NavLink)`
   }
 `;
 
-export const AddEventIcon = styled(FiPlus)`
+export const AddEventIcon = styled(BsPlusLg)`
   width: 24px;
   height: 24px;
 `;

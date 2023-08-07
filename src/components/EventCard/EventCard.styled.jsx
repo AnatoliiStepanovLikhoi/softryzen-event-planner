@@ -125,10 +125,11 @@ export const CardDescription = styled.p`
   overflow: hidden;
 `;
 
-export const MoreInfoButton = styled.button`
+export const MoreInfoButton = styled(NavLink)`
   display: none;
   margin-top: 16px;
   margin-left: auto;
+  width: 114px;
   padding: 10px 24px;
   outline: none;
   border: none;
@@ -150,7 +151,7 @@ export const MoreInfoButton = styled.button`
   }
 `;
 
-export const CardDetails = styled(NavLink)`
+export const CardDetails = styled.div`
   &:hover .moreInfo,
   &:focus .moreInfo {
     display: block;

@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<MainPage />} />
             <Route path="/create/" element={<CreateEventPage />} />
-            <Route path="/event/:id" element={<EventDetailPage />} />
+            <Route path="/event/:eventId" element={<EventDetailPage />} />
             <Route path="*" element={<Navigate to={"/"} />} />
           </Route>
         </Routes>
