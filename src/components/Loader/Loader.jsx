@@ -1,10 +1,27 @@
-import { LoaderWrapper, LoaderText } from "./Loader.styled";
+import { ThreeCircles } from "react-loader-spinner";
+import { Box } from "./Loader.styled";
+
+import { createPortal } from "react-dom";
+
+const modalRoot = document.querySelector("#modal-root");
 
 const Loader = () => {
-  return (
-    <LoaderWrapper>
-      <LoaderText>Loading in progress...</LoaderText>
-    </LoaderWrapper>
+  return createPortal(
+    <Box>
+      <ThreeCircles
+        height="100"
+        width="100"
+        color="#4fa94d"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        ariaLabel="three-circles-rotating"
+        outerCircleColor="#7B61FF"
+        innerCircleColor="#ACA7C3"
+        middleCircleColor="#6243FF"
+      />
+    </Box>,
+    modalRoot
   );
 };
 

@@ -47,6 +47,23 @@ const useEventStore = create((set) => ({
     }
   },
 
+  deleteEventByID: async (id) => {
+    try {
+      await fetch(
+        `https://6468ba5260c8cb9a2cb077de.mockapi.io/api/events/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      set((state) => ({
+        items: state.items.filter((event) => event.id !== id),
+      }));
+    } catch (error) {
+      set({ isLoading: false, error: error.message });
+    }
+  },
+
   addEvent: (event) => {
     set((state) => ({
       items: [...state.items, event],

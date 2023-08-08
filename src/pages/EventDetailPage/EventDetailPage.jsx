@@ -1,6 +1,8 @@
 import { MainSection } from "../MainPage/MainPage.styled";
 import { BackButton } from "../../components/BackButton/BackButton";
 import { EventDetailWrapper, EventDetailTitle } from "./EventDetailPage.styled";
+import EventDetailContainer from "../../components/EventDetailContainer/EventDetailContainer";
+import Loader from "../../components/Loader/Loader";
 import { useParams } from "react-router-dom";
 import useEventStore from "../../services/eventStore";
 import { useEffect } from "react";
@@ -8,6 +10,8 @@ import { useEffect } from "react";
 const EventDetailPage = () => {
   const fetchEventById = useEventStore((state) => state.fetchEventById);
   const eventDetails = useEventStore((state) => state.eventDetails);
+  const isLoading = useEventStore((state) => state.isLoading);
+  const error = useEventStore((state) => state.error);
 
   const { eventId } = useParams();
 
@@ -15,26 +19,22 @@ const EventDetailPage = () => {
     fetchEventById(eventId);
   }, [eventId, fetchEventById]);
 
-  // console.log(eventDetails);
+  const { title } = eventDetails;
 
-  const {
-    id,
-    title,
-    date,
-    time,
-    location,
-    description,
-    category,
-    priority,
-    picture,
-  } = eventDetails;
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <MainSection>
       <BackButton />
       <EventDetailWrapper>
         <EventDetailTitle>{title}</EventDetailTitle>
-        {/* <EventContainer /> */}
+        <EventDetailContainer eventDetails={eventDetails} />
       </EventDetailWrapper>
     </MainSection>
   );

@@ -2,6 +2,7 @@
 import useEventStore from "../../services/eventStore";
 import { EventListWrapper } from "./EventList.styled";
 import { EventCard } from "../EventCard/EventCard";
+import Loader from "../Loader/Loader";
 
 const EventList = ({ events }) => {
   // const events = useEventStore((state) => state.items);
@@ -21,7 +22,7 @@ const EventList = ({ events }) => {
   // );
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (error) {

@@ -1,15 +1,13 @@
 import styled from "styled-components";
 
-export const LoaderWrapper = styled.div`
+export const Box = styled.div`
+  height: 500%;
+  width: 100%;
+  background: rgba(254, 252, 255, 0.8);
   display: flex;
-  align-items: center;
+  padding-top: 50vh;
+  z-index: 5000;
+  position: absolute;
+  top: 0%;
   justify-content: center;
-
-  padding: 62px 16px 36px;
-`;
-
-export const LoaderText = styled.p`
-  text-transform: uppercase;
-  color: ${(props) => props.theme.colors.accent};
-  font-size: 24px;
 `;
