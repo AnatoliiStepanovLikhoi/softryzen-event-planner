@@ -8,7 +8,7 @@ export const submitEvent = async (data, addEvent) => {
     );
     const newEvent = { ...response.data, id: new Date().getTime() };
     addEvent(newEvent);
-    console.log("Event successfully created:", response.data);
+    return newEvent;
   } catch (error) {
     console.error("Error creating event:", error);
   }

@@ -4,6 +4,8 @@ import useEventStore from "../../services/eventStore";
 import { useForm } from "react-hook-form";
 import { validationRules } from "../../services/validationRules";
 import { EVENTCATEGORY } from "../../constants/Caterories/categories";
+import { useState, useRef } from "react";
+import useOutsideClick from "../../hooks/useOutsideClick";
 
 import {
   EventForm,
@@ -14,6 +16,7 @@ import {
   EventError,
   EventSelectBox,
   EventFormButton,
+  EventSelectOption,
 } from "./AddEventFrom.styled";
 
 import { RiArrowDownSLine } from "react-icons/ri";
@@ -22,6 +25,26 @@ import { IoClose } from "react-icons/io5";
 const AddEventForm = () => {
   const navigate = useNavigate();
   const addEvent = useEventStore((state) => state.addEvent);
+
+  const [openCategoryPanel, setOpenCategoryPanel] = useState(false);
+  const [openPriorityPanel, setOpenPriorityPanel] = useState(false);
+
+  const categoryRef = useRef(null);
+  const priorityRef = useRef(null);
+
+  const handleCategoryOutsideClick = () => {
+    setOpenCategoryPanel(false);
+  };
+
+  const handlePriorityOutsideClick = () => {
+    setOpenPriorityPanel(false);
+  };
+
+  useOutsideClick(categoryRef, handleCategoryOutsideClick);
+  useOutsideClick(priorityRef, handlePriorityOutsideClick);
+
+  const today = new Date();
+  const minDate = today.toISOString().split("T")[0];
 
   const {
     register,
@@ -32,7 +55,6 @@ const AddEventForm = () => {
   } = useForm({ mode: "onChange" });
 
   const handleClearInput = (fieldName) => {
-    console.log("push", fieldName);
     setValue(fieldName, "");
   };
 
@@ -99,9 +121,12 @@ const AddEventForm = () => {
           <EventSelectBox>
             <EventInput
               {...register("date", { required: "required field" })}
+              type="text"
               placeholder="Input"
-              type="date"
+              onFocus={(e) => (e.target.type = "date")}
+              onBlur={(e) => (e.target.type = "text")}
               name="date"
+              min={minDate}
             />
           </EventSelectBox>
           {errors.date && <EventError>{errors.date.message}</EventError>}
@@ -111,8 +136,10 @@ const AddEventForm = () => {
           <EventSelectBox>
             <EventInput
               {...register("time", { required: "required field" })}
+              type="text"
               placeholder="Input"
-              type="time"
+              onFocus={(e) => (e.target.type = "time")}
+              onBlur={(e) => (e.target.type = "text")}
               name="time"
             />
           </EventSelectBox>
@@ -144,17 +171,29 @@ const AddEventForm = () => {
         </EventLabel>
         <EventLabel>
           Category
-          <EventSelectBox>
-            <RiArrowDownSLine size="24" color="#7b61ff" />
+          <EventSelectBox
+            ref={categoryRef}
+            onClick={() => {
+              setOpenCategoryPanel(!openCategoryPanel);
+              setOpenPriorityPanel(false);
+            }}
+          >
+            <RiArrowDownSLine
+              size="24"
+              color="#7b61ff"
+              style={{
+                transform: openCategoryPanel && "rotate(180deg)",
+              }}
+            />
             <EventSelect
               {...register("category")}
               placeholder="Select"
               name="category"
             >
               {EVENTCATEGORY.map((category) => (
-                <option key={category} value={category}>
+                <EventSelectOption key={category} value={category}>
                   {category}
-                </option>
+                </EventSelectOption>
               ))}
             </EventSelect>
           </EventSelectBox>
@@ -177,8 +216,20 @@ const AddEventForm = () => {
         </EventLabel>
         <EventLabel>
           Priority
-          <EventSelectBox>
-            <RiArrowDownSLine size="24" color="#7b61ff" />
+          <EventSelectBox
+            ref={priorityRef}
+            onClick={() => {
+              setOpenPriorityPanel(!openPriorityPanel);
+              setOpenCategoryPanel(false);
+            }}
+          >
+            <RiArrowDownSLine
+              size="24"
+              color="#7b61ff"
+              style={{
+                transform: openPriorityPanel && "rotate(180deg)",
+              }}
+            />
             <EventSelect
               {...register("priority")}
               placeholder="Select"

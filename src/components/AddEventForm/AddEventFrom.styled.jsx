@@ -124,6 +124,10 @@ export const EventSelect = styled.select`
   }
 `;
 
+export const EventSelectOption = styled.option`
+  border-bottom: 1px solid #aca7c3;
+`;
+
 export const EventError = styled.div`
   margin-top: 4px;
   padding: 0 15px;
@@ -158,7 +162,11 @@ export const EventFormButton = styled.button`
 
   &:focus,
   &:hover {
-    color: ${(props) => props.theme.colors.button.default};
+    background-color: ${(props) => props.theme.colors.button.hover};
+  }
+
+  &:disabled {
+    background-color: #aca7c3;
   }
 
   @media ${device.tablet} {

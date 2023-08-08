@@ -1,11 +1,11 @@
 export const EVENTCATEGORY = [
-  "art",
-  "music",
-  "business",
-  "conference",
-  "workshop",
-  "party",
-  "sport",
+  "Art",
+  "Music",
+  "Business",
+  "Conference",
+  "Workshop",
+  "Party",
+  "Sport",
 ];
 
-export const PRIORITYCATEGORY = ["high", "medium", "low"];
+export const PRIORITYCATEGORY = ["High", "Medium", "Low"];

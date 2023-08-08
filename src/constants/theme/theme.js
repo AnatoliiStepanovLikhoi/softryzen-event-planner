@@ -49,6 +49,10 @@ const theme = Object.freeze({
       inputShadow: "2px 4px 9px 0px rgba(166, 141, 174, 0.28)",
     },
 
+    select: {
+      divider: "#aca7c3",
+    },
+
     // // Modal
     // modal: {
     //   text: "#23262a",
