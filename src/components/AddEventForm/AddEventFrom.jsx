@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useState, useRef } from "react";
 import { submitEvent } from "../../services/API";
 import useEventStore from "../../services/eventStore";
-import { useForm } from "react-hook-form";
 import { validationRules } from "../../services/validationRules";
 import { EVENTCATEGORY } from "../../constants/Caterories/categories";
-import { useState, useRef } from "react";
 import useOutsideClick from "../../hooks/useOutsideClick";
 
 import {
@@ -49,7 +49,6 @@ const AddEventForm = () => {
   const {
     register,
     handleSubmit,
-    // reset,
     setValue,
     formState: { errors, dirtyFields, isValid },
   } = useForm({ mode: "onChange" });
@@ -120,12 +119,12 @@ const AddEventForm = () => {
           Select date
           <EventSelectBox>
             <EventInput
-              {...register("date", { required: "required field" })}
+              {...register("selectDate", { required: "required field" })}
               type="text"
               placeholder="Input"
               onFocus={(e) => (e.target.type = "date")}
               onBlur={(e) => (e.target.type = "text")}
-              name="date"
+              name="selectDate"
               min={minDate}
             />
           </EventSelectBox>
@@ -135,12 +134,12 @@ const AddEventForm = () => {
           Select time
           <EventSelectBox>
             <EventInput
-              {...register("time", { required: "required field" })}
+              {...register("selectTime", { required: "required field" })}
               type="text"
               placeholder="Input"
               onFocus={(e) => (e.target.type = "time")}
               onBlur={(e) => (e.target.type = "text")}
-              name="time"
+              name="selectTime"
             />
           </EventSelectBox>
           {errors.time && <EventError>{errors.time.message}</EventError>}
@@ -245,9 +244,9 @@ const AddEventForm = () => {
         <EventFormButton
           aria-label="save event"
           type="submit"
-          disabled={!isValid || Object.keys(dirtyFields).length === 6}
+          disabled={!isValid || Object.keys(dirtyFields).length < 5}
         >
-          {Object.keys(dirtyFields).length === 7 ? "Save" : "Add event"}
+          {Object.keys(dirtyFields).length > 5 ? "Save" : "Add event"}
         </EventFormButton>
       </EventForm>
     </>

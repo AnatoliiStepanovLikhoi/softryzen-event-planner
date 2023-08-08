@@ -51,31 +51,8 @@ const theme = Object.freeze({
 
     select: {
       divider: "#aca7c3",
+      shadow: "2px 4px 9px 0px rgba(166, 141, 174, 0.28)",
     },
-
-    // // Modal
-    // modal: {
-    //   text: "#23262a",
-    //   textForm: "rgba(35, 38, 42, .8)",
-    //   iconPersonForm: "rgba(35, 38, 42, .8)",
-    //   iconPen: "#23262a",
-    //   iconClose: "#333333",
-    //   iconPersonPhotoUser: "#8baa36",
-    //   iconPersonPhotoUserHover: "#23262A",
-    //   bgUnderPhotoUser: "#d9d9d9",
-    //   bgInputHover: "#fafafa",
-    //   border: "#23262a",
-    //   // borderHover: '#23262a',
-    //   bg: "#fafafa",
-    //   bgBtn: "#8baa36",
-    //   textBtn: "#fafafa",
-    //   iconBtn: "#fafafa",
-    //   bgBtnHover: "#22252a",
-    //   textBtnCancel: "#23262a",
-    //   textBtnCancelHover: "#fafafa",
-    //   bgBtnCancel: "#D9D9D9",
-    //   borderBtnCancel: "#23262A",
-    // },
   },
 
   spacing: (value) => `${4 * value}px`,

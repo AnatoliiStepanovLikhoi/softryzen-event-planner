@@ -121,7 +121,7 @@ export const CardDescription = styled.p`
   line-height: 1.43;
   margin-top: 16px;
 
-  max-height: 4em;
+  max-height: 4.2em;
   overflow: hidden;
 `;
 

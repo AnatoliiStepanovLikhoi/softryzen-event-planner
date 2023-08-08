@@ -16,12 +16,5 @@ const Background = styled.div`
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
-
-  /* 
-  color: ${(props) => props.theme.colors.text};
-  background-color: ${(props) => props.theme.colors.background};
-  min-height: calc(100vh - 168px);
-  background-repeat: no-repeat;
-  background-size: 100% 100%; */
 `;
 export default Background;

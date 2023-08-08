@@ -10,8 +10,8 @@ export const EventForm = styled.form`
   padding: 40px 16px;
   margin-top: 24px;
   border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+  background-color: ${(props) => props.theme.colors.backgroundWhite};
+  box-shadow: ${(props) => props.theme.colors.card.cardShadow};
 
   button {
     padding: 16px 12px;
@@ -51,7 +51,7 @@ export const EventForm = styled.form`
 `;
 
 export const EventLabel = styled.label`
-  color: #7b61ff;
+  color: ${(props) => props.theme.colors.accent};
 
   font-size: 16px;
   font-weight: 400;
@@ -60,22 +60,22 @@ export const EventLabel = styled.label`
 export const EventInput = styled.input`
   width: 100%;
   padding: 16px 12px;
-  color: #3f3f3f;
+  color: ${(props) => props.theme.colors.categoryTitle};
 
   font-size: 16px;
   font-weight: 400;
 
   border-radius: 8px;
-  border: 1px solid #aca7c3;
-  transition: color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid ${(props) => props.theme.colors.select.divider};
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
   appearance: none;
   cursor: pointer;
 
   &:focus,
   &:hover {
-    color: #7b61ff;
-    outline: 1px solid #7b61ff;
+    color: ${(props) => props.theme.colors.accent};
+    outline: 1px solid ${(props) => props.theme.colors.accent};
   }
 `;
 
@@ -83,21 +83,21 @@ export const EventTextareaInput = styled.textarea`
   width: 100%;
   height: 153px;
   padding: 16px 40px 16px 12px;
-  color: #3f3f3f;
+  resize: none;
 
   font-size: 16px;
   font-weight: 400;
 
   border-radius: 8px;
-  border: 1px solid #aca7c3;
-  transition: color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
-  resize: none;
+  border: 1px solid ${(props) => props.theme.colors.select.divider};
+  color: ${(props) => props.theme.colors.categoryTitle};
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   cursor: pointer;
 
   &:focus,
   &:hover {
-    color: #7b61ff;
-    outline: 1px solid #7b61ff;
+    color: ${(props) => props.theme.colors.accent};
+    outline: 1px solid ${(props) => props.theme.colors.accent};
   }
 `;
 
@@ -105,33 +105,33 @@ export const EventSelect = styled.select`
   width: 100%;
 
   padding: 16px 35px 16px 12px;
-  color: #3f3f3f;
+  color: ${(props) => props.theme.colors.categoryTitle};
 
   font-size: 16px;
   font-weight: 400;
 
   border-radius: 8px;
-  border: 1px solid #aca7c3;
-  transition: color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid ${(props) => props.theme.colors.select.divider};
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
   appearance: none;
   cursor: pointer;
 
   &:hover,
   &:focus {
-    color: #7b61ff;
-    outline: 1px solid #7b61ff;
+    color: ${(props) => props.theme.colors.accent};
+    outline: 1px solid ${(props) => props.theme.colors.accent};
   }
 `;
 
 export const EventSelectOption = styled.option`
-  border-bottom: 1px solid #aca7c3;
+  border-bottom: 1px solid ${(props) => props.theme.colors.select.divider};
 `;
 
 export const EventError = styled.div`
   margin-top: 4px;
   padding: 0 15px;
-  color: #ff2b77;
+  color: ${(props) => props.theme.colors.card.textPriorityHigh};
   text-align: right;
   font-size: 12px;
   line-height: 1.3;
@@ -146,7 +146,7 @@ export const EventSelectBox = styled.div`
     right: 15px;
     top: 15px;
 
-    transition: 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   }
 `;
 
@@ -166,7 +166,7 @@ export const EventFormButton = styled.button`
   }
 
   &:disabled {
-    background-color: #aca7c3;
+    background-color: ${(props) => props.theme.colors.select.divider};
   }
 
   @media ${device.tablet} {

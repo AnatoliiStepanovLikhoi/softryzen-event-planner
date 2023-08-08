@@ -12,15 +12,7 @@ import {
   CategoryDropdownItem,
 } from "./CategoryButton.styled";
 
-const eventCategory = [
-  "art",
-  "music",
-  "business",
-  "conference",
-  "workshop",
-  "party",
-  "sport",
-];
+import { EVENTCATEGORY } from "../../constants/Caterories/categories";
 
 const CategoryButton = ({ handleFilterCategory }) => {
   const [showCategoryList, setShowCategoryList] = useState(false);
@@ -56,7 +48,7 @@ const CategoryButton = ({ handleFilterCategory }) => {
             <CategoryButtonIcon />
           </CategoryDropdownWrapper>
           <CategoryDropdownList>
-            {eventCategory.map((category) => (
+            {EVENTCATEGORY.map((category) => (
               <CategoryDropdownItem
                 key={category}
                 onClick={() => {

@@ -1,18 +1,17 @@
 import styled from "styled-components";
-// import { device } from "../../constants/deviceType/deviceType";
 import { BiArrowBack } from "react-icons/bi";
 
 export const GoBackButton = styled.button`
-  border: none;
   background-color: transparent;
   display: flex;
   align-items: center;
   gap: 8px;
-  font-weight: 500;
-  line-height: 1.5;
-  color: ${(props) => props.theme.colors.accent};
   font-size: 14px;
+  font-weight: 500;
   font-family: inherit;
+  line-height: 1.5;
+  border: none;
+  color: ${(props) => props.theme.colors.accent};
 `;
 
 export const StyledArrow = styled(BiArrowBack)`

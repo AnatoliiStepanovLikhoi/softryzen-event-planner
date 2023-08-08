@@ -11,7 +11,7 @@ export const StyledSelect = styled(Select)`
     line-height: 1;
     font-weight: 500;
     border-radius: 8px;
-    box-shadow: 3px 4px 9px 0px rgba(166, 141, 174, 0.75);
+    box-shadow: ${(props) => props.theme.colors.select.shadow};
     outline: none;
     border: none;
   }
@@ -57,7 +57,7 @@ export const StyledSelect = styled(Select)`
     cursor: pointer;
     background-color: ${(props) => props.theme.colors.input.bg};
     color: ${(props) => props.theme.colors.input.sortInputTextInactive};
-    border-bottom: 1px solid #aca7c3;
+    border-bottom: 1px solid ${(props) => props.theme.colors.select.divider};
   }
 
   .Select__input {

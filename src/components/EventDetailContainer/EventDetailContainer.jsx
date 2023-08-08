@@ -39,8 +39,6 @@ const EventDetailContainer = ({ eventDetails }) => {
     navigate("/");
   };
 
-  console.log(picture);
-
   return (
     <EventWrapper>
       <EventImage

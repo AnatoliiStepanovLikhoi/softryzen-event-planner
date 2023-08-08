@@ -3,9 +3,9 @@ import { BackButton } from "../../components/BackButton/BackButton";
 import { EventDetailWrapper, EventDetailTitle } from "./EventDetailPage.styled";
 import EventDetailContainer from "../../components/EventDetailContainer/EventDetailContainer";
 import Loader from "../../components/Loader/Loader";
-import { useParams } from "react-router-dom";
 import useEventStore from "../../services/eventStore";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const EventDetailPage = () => {
   const fetchEventById = useEventStore((state) => state.fetchEventById);
@@ -26,7 +26,7 @@ const EventDetailPage = () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>Unfortunately, something went wrong: {error}</div>;
   }
 
   return (

@@ -1,10 +1,9 @@
-// import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
 import EventList from "../../components/EventList/EventList";
 import { MainSection, MainFilterWrapper, MainTitle } from "./MainPage.styled";
 import AddEventButton from "../../components/AddEventButton/AddEventButton";
 import CategoryButton from "../../components/CategoryButton/CategoryButton";
 import SortButton from "../../components/SortButton/SortButton";
-import { useEffect, useState } from "react";
 import useEventStore from "../../services/eventStore";
 
 const MainPage = () => {

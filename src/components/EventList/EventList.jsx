@@ -13,7 +13,7 @@ const EventList = ({ events }) => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>Unfortunately, something went wrong: {error}</div>;
   }
 
   return (
