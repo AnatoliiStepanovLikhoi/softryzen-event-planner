@@ -26,6 +26,7 @@ const SearchInput = ({ placeholder }) => {
       <StyledInput
         type="text"
         placeholder={placeholder}
+        aria-label="Search"
         value={inputValue}
         onChange={(event) => handleInputChange(event)}
       />

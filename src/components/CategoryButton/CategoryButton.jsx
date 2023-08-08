@@ -39,7 +39,11 @@ const CategoryButton = ({ handleFilterCategory }) => {
 
   return (
     <CategoryWrapper>
-      <CategoryBtn ref={categoryButtonRef} onClick={handleClick}>
+      <CategoryBtn
+        ref={categoryButtonRef}
+        onClick={handleClick}
+        aria-label="fliter category"
+      >
         <CategoryButtonTitle>
           {activeCategory || "Category"}
         </CategoryButtonTitle>

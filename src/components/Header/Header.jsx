@@ -15,7 +15,11 @@ const Header = () => {
     <HeaderBackground>
       <HeaderContainer>
         <Logo>
-          <NavLink to={"/"} style={{ color: "#7B61FF" }}>
+          <NavLink
+            to={"/"}
+            style={{ color: "#7B61FF" }}
+            aria-label="main page link"
+          >
             Event Planner
           </NavLink>
         </Logo>

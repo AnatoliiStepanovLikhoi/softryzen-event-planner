@@ -2,72 +2,22 @@ import { useNavigate } from "react-router-dom";
 import { submitEvent } from "../../services/API";
 import useEventStore from "../../services/eventStore";
 import { useForm } from "react-hook-form";
+import { validationRules } from "../../services/validationRules";
+import { EVENTCATEGORY } from "../../constants/Caterories/categories";
 
 import {
-  StyledForm,
-  LabelStyled,
-  InputStyled,
-  TextareaStyled,
-  SelectStyled,
-  ErrorStyled,
-  SelectWrap,
+  EventForm,
+  EventLabel,
+  EventInput,
+  EventTextareaInput,
+  EventSelect,
+  EventError,
+  EventSelectBox,
+  EventFormButton,
 } from "./AddEventFrom.styled";
+
 import { RiArrowDownSLine } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
-
-const validationRules = {
-  title: {
-    required: "Title is required",
-    minLength: {
-      value: 3,
-      message: "Name must have at least 3 characters",
-    },
-    pattern: {
-      value: /^(?=[a-z0-9])[a-z0-9\s]{2,30}[a-z0-9]$/i,
-      message: "Invalid input",
-    },
-  },
-
-  description: {
-    required: "Description is required",
-    minLength: {
-      value: 10,
-      message: "Name must have at least 10 characters",
-    },
-    pattern: {
-      value: /^(?=[a-z0-9])[a-z0-9\s]{9,80}[a-z0-9.]$/i,
-      message: "Invalid input",
-    },
-  },
-
-  location: {
-    required: "Location is required",
-    minLength: {
-      value: 3,
-      message: "Location  must have at least 3 characters",
-    },
-    maxLength: {
-      value: 15,
-      message: "Location  must have at least 15 characters",
-    },
-    pattern: {
-      value: /^(?=[a-z0-9])[a-z0-9\s]{2,15}[a-z0-9]$/i,
-      message: "Invalid input",
-    },
-  },
-};
-
-const eventCategory = [
-  "art",
-  "music",
-  "business",
-  "conference",
-  "workshop",
-  "party",
-  "sport",
-];
-
-// const priorityCategory = ["high", "medium", "low"];
 
 const AddEventForm = () => {
   const navigate = useNavigate();
@@ -98,16 +48,16 @@ const AddEventForm = () => {
 
   return (
     <>
-      <StyledForm onSubmit={handleSubmit(onSubmit)}>
-        <LabelStyled>
+      <EventForm onSubmit={handleSubmit(onSubmit)}>
+        <EventLabel>
           Title
-          <SelectWrap>
+          <EventSelectBox>
             <IoClose
               onClick={() => handleClearInput("title")}
               size="24"
               color={errors.title ? "#FF2B77" : "#7b61ff"}
             />
-            <InputStyled
+            <EventInput
               {...register("title", validationRules.title)}
               placeholder="Input"
               type="text"
@@ -117,18 +67,18 @@ const AddEventForm = () => {
                 borderColor: errors.title && "#FF2B77",
               }}
             />
-          </SelectWrap>
-          {errors.title && <ErrorStyled>{errors.title.message}</ErrorStyled>}
-        </LabelStyled>
-        <LabelStyled style={{ gridRowStart: 2, gridRowEnd: 4 }}>
+          </EventSelectBox>
+          {errors.title && <EventError>{errors.title.message}</EventError>}
+        </EventLabel>
+        <EventLabel style={{ gridRowStart: 2, gridRowEnd: 4 }}>
           Description
-          <SelectWrap>
+          <EventSelectBox>
             <IoClose
               onClick={() => handleClearInput("description")}
               size="24"
               color={errors.description ? "#FF2B77" : "#7b61ff"}
             />
-            <TextareaStyled
+            <EventTextareaInput
               {...register("description", validationRules.description)}
               placeholder="Input"
               type="text"
@@ -139,45 +89,45 @@ const AddEventForm = () => {
                 borderColor: errors.description && "#FF2B77",
               }}
             />
-          </SelectWrap>
+          </EventSelectBox>
           {errors.description && (
-            <ErrorStyled>{errors.description.message}</ErrorStyled>
+            <EventError>{errors.description.message}</EventError>
           )}
-        </LabelStyled>
-        <LabelStyled>
+        </EventLabel>
+        <EventLabel>
           Select date
-          <SelectWrap>
-            <InputStyled
+          <EventSelectBox>
+            <EventInput
               {...register("date", { required: "required field" })}
               placeholder="Input"
               type="date"
               name="date"
             />
-          </SelectWrap>
-          {errors.date && <ErrorStyled>{errors.date.message}</ErrorStyled>}
-        </LabelStyled>
-        <LabelStyled>
+          </EventSelectBox>
+          {errors.date && <EventError>{errors.date.message}</EventError>}
+        </EventLabel>
+        <EventLabel>
           Select time
-          <SelectWrap>
-            <InputStyled
+          <EventSelectBox>
+            <EventInput
               {...register("time", { required: "required field" })}
               placeholder="Input"
               type="time"
               name="time"
             />
-          </SelectWrap>
-          {errors.time && <ErrorStyled>{errors.time.message}</ErrorStyled>}
-        </LabelStyled>
+          </EventSelectBox>
+          {errors.time && <EventError>{errors.time.message}</EventError>}
+        </EventLabel>
 
-        <LabelStyled>
+        <EventLabel>
           Location
-          <SelectWrap>
+          <EventSelectBox>
             <IoClose
               onClick={() => handleClearInput("location")}
               size="24"
               color={errors.location ? "#FF2B77" : "#7b61ff"}
             />
-            <InputStyled
+            <EventInput
               {...register("location", validationRules.location)}
               placeholder="Input"
               type="text"
@@ -187,49 +137,49 @@ const AddEventForm = () => {
                 borderColor: errors.location && "#FF2B77",
               }}
             />
-          </SelectWrap>
+          </EventSelectBox>
           {errors.location && (
-            <ErrorStyled>{errors.location.message}</ErrorStyled>
+            <EventError>{errors.location.message}</EventError>
           )}
-        </LabelStyled>
-        <LabelStyled>
+        </EventLabel>
+        <EventLabel>
           Category
-          <SelectWrap>
+          <EventSelectBox>
             <RiArrowDownSLine size="24" color="#7b61ff" />
-            <SelectStyled
+            <EventSelect
               {...register("category")}
               placeholder="Select"
               name="category"
             >
-              {eventCategory.map((category) => (
+              {EVENTCATEGORY.map((category) => (
                 <option key={category} value={category}>
                   {category}
                 </option>
               ))}
-            </SelectStyled>
-          </SelectWrap>
-        </LabelStyled>
-        <LabelStyled style={{ color: "#ACA7C3" }}>
+            </EventSelect>
+          </EventSelectBox>
+        </EventLabel>
+        <EventLabel style={{ color: "#ACA7C3" }}>
           Add picture
-          <SelectWrap>
+          <EventSelectBox>
             <IoClose
               size="24"
               color="#ACA7C3"
               onClick={() => handleClearInput("description")}
             />
-            <InputStyled
+            <EventInput
               placeholder="Input"
               disabled
               name="picture"
               style={{ borderColor: "#ACA7C3", outlineColor: "transparent" }}
             />
-          </SelectWrap>
-        </LabelStyled>
-        <LabelStyled>
+          </EventSelectBox>
+        </EventLabel>
+        <EventLabel>
           Priority
-          <SelectWrap>
+          <EventSelectBox>
             <RiArrowDownSLine size="24" color="#7b61ff" />
-            <SelectStyled
+            <EventSelect
               {...register("priority")}
               placeholder="Select"
               name="priority"
@@ -238,17 +188,17 @@ const AddEventForm = () => {
               <option value="High">High</option>
               <option value="Medium">Medium</option>
               <option value="Low">Low</option>
-            </SelectStyled>
-          </SelectWrap>
-        </LabelStyled>
-        {/* <Button option="button" type="submit" title={btnTitle} /> */}
-        <button
+            </EventSelect>
+          </EventSelectBox>
+        </EventLabel>
+        <EventFormButton
+          aria-label="save event"
           type="submit"
           disabled={!isValid || Object.keys(dirtyFields).length === 6}
         >
           {Object.keys(dirtyFields).length === 7 ? "Save" : "Add event"}
-        </button>
-      </StyledForm>
+        </EventFormButton>
+      </EventForm>
     </>
   );
 };

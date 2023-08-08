@@ -55,7 +55,7 @@ export const EventCard = ({ event }) => {
           <CardInfoWrapper>
             <CardTitle>{title}</CardTitle>
             <CardDescription>{description}</CardDescription>
-            <MoreInfoButton className="moreInfo" to={path}>
+            <MoreInfoButton className="moreInfo" to={path} aria-label="More info">
               More info
             </MoreInfoButton>
           </CardInfoWrapper>

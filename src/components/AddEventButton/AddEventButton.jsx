@@ -6,7 +6,7 @@ import {
 
 const AddEventButton = () => {
   return (
-    <AddEventBtn to="/create">
+    <AddEventBtn to="/create" aria-label="Add new event">
       <AddEventIcon />
       <AddEventTitle>Add new event</AddEventTitle>
     </AddEventBtn>

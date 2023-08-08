@@ -15,7 +15,7 @@ const Loader = () => {
         wrapperStyle={{}}
         wrapperClass=""
         visible={true}
-        ariaLabel="three-circles-rotating"
+        ariaLabel="three-circles-rotating-loader"
         outerCircleColor="#7B61FF"
         innerCircleColor="#ACA7C3"
         middleCircleColor="#6243FF"

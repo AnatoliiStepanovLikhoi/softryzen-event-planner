@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../constants/deviceType/deviceType";
 
-export const StyledForm = styled.form`
+export const EventForm = styled.form`
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
@@ -50,14 +50,14 @@ export const StyledForm = styled.form`
   }
 `;
 
-export const LabelStyled = styled.label`
+export const EventLabel = styled.label`
   color: #7b61ff;
 
   font-size: 16px;
   font-weight: 400;
 `;
 
-export const InputStyled = styled.input`
+export const EventInput = styled.input`
   width: 100%;
   padding: 16px 12px;
   color: #3f3f3f;
@@ -79,7 +79,7 @@ export const InputStyled = styled.input`
   }
 `;
 
-export const TextareaStyled = styled.textarea`
+export const EventTextareaInput = styled.textarea`
   width: 100%;
   height: 153px;
   padding: 16px 40px 16px 12px;
@@ -101,7 +101,7 @@ export const TextareaStyled = styled.textarea`
   }
 `;
 
-export const SelectStyled = styled.select`
+export const EventSelect = styled.select`
   width: 100%;
 
   padding: 16px 35px 16px 12px;
@@ -124,7 +124,7 @@ export const SelectStyled = styled.select`
   }
 `;
 
-export const ErrorStyled = styled.div`
+export const EventError = styled.div`
   margin-top: 4px;
   padding: 0 15px;
   color: #ff2b77;
@@ -133,7 +133,7 @@ export const ErrorStyled = styled.div`
   line-height: 1.3;
 `;
 
-export const SelectWrap = styled.div`
+export const EventSelectBox = styled.div`
   position: relative;
   margin-top: 8px;
 
@@ -143,5 +143,26 @@ export const SelectWrap = styled.div`
     top: 15px;
 
     transition: 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+`;
+
+export const EventFormButton = styled.button`
+  width: 100%;
+  padding: 16px 12px;
+  line-height: 1.5;
+  color: ${(props) => props.theme.colors.backgroundWhite};
+  background-color: ${(props) => props.theme.colors.button.default};
+  border-radius: 8px;
+  border: none;
+  box-shadow: ${(props) => props.theme.colors.button.buttonShadow};
+
+  &:focus,
+  &:hover {
+    color: ${(props) => props.theme.colors.button.default};
+  }
+
+  @media ${device.tablet} {
+    width: 193px;
+    margin-left: auto;
   }
 `;

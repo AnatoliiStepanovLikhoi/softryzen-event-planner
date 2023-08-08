@@ -10,7 +10,7 @@ export function BackButton() {
   };
 
   return (
-    <GoBackButton type="button" onClick={handleClick}>
+    <GoBackButton type="button" onClick={handleClick} aria-label="Go back">
       <StyledArrow />
       Back
     </GoBackButton>

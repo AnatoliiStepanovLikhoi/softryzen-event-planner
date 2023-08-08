@@ -59,7 +59,11 @@ const EventDetailContainer = ({ eventDetails }) => {
         </EventInfoWrapper>
         <ButtonWrapper>
           <EditButton>Edit</EditButton>
-          <DeleteButton type="button" onClick={handleDeleteClick}>
+          <DeleteButton
+            type="button"
+            onClick={handleDeleteClick}
+            aria-label="delete event"
+          >
             Delete event
           </DeleteButton>
         </ButtonWrapper>

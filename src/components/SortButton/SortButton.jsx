@@ -3,7 +3,7 @@ import { SortBtn, SortBtnTitle, SortBtnIcon } from "./SortButton.styled";
 const SortButton = () => {
   return (
     <>
-      <SortBtn>
+      <SortBtn type="buttton" aria-label="Sort events">
         <SortBtnTitle>Sort by</SortBtnTitle>
         <SortBtnIcon />
       </SortBtn>

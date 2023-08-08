@@ -11,6 +11,7 @@ const LanguageSelect = () => {
       classNamePrefix="Select"
       defaultValue={options[0]}
       options={options}
+      aria-label="choose language"
     />
   );
 };

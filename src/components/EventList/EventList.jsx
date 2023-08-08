@@ -5,21 +5,8 @@ import { EventCard } from "../EventCard/EventCard";
 import Loader from "../Loader/Loader";
 
 const EventList = ({ events }) => {
-  // const events = useEventStore((state) => state.items);
   const isLoading = useEventStore((state) => state.isLoading);
   const error = useEventStore((state) => state.error);
-  // const fetchEvents = useEventStore((state) => state.fetchEvents);
-  // const filterValue = useEventStore((state) => state.filterValue);
-
-  console.log(events);
-
-  // useEffect(() => {
-  //   fetchEvents();
-  // }, [fetchEvents]);
-
-  // const filteredEvents = events.filter((event) =>
-  //   event.title.toLowerCase().includes(filterValue.toLowerCase())
-  // );
 
   if (isLoading) {
     return <Loader />;
@@ -28,8 +15,6 @@ const EventList = ({ events }) => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-
-  // console.log(events);
 
   return (
     <EventListWrapper>
