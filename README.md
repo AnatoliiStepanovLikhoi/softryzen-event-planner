@@ -2,7 +2,7 @@
 
 Event Planner is a web application that allows users to plan and organize events. 
 
-#<a  href='https://anatoliistepanovlikhoi.github.io/softryzen-event-planner/'>Watch live page</a>
+# <a  href='https://anatoliistepanovlikhoi.github.io/softryzen-event-planner/'>Watch live page</a>
 
 ## Main Page
 On the main page, users can view all upcoming events. Also they can click the "More info" button on a card to view detailed information about the event. 
