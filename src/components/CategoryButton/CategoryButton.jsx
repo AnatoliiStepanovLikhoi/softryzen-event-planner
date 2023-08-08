@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useState, useRef } from "react";
+import useOutsideClick from "../../hooks/useOutsideClick";
 import {
   CategoryWrapper,
   CategoryBtn,
@@ -24,14 +25,21 @@ const eventCategory = [
 const CategoryButton = ({ handleFilterCategory }) => {
   const [showCategoryList, setShowCategoryList] = useState(false);
   const [activeCategory, setActiveCategory] = useState("");
+  const categoryButtonRef = useRef(null);
 
   const handleClick = () => {
     setShowCategoryList(!showCategoryList);
   };
 
+  const closeCategoryList = () => {
+    setShowCategoryList(false);
+  };
+
+  useOutsideClick(categoryButtonRef, closeCategoryList);
+
   return (
     <CategoryWrapper>
-      <CategoryBtn onClick={handleClick}>
+      <CategoryBtn ref={categoryButtonRef} onClick={handleClick}>
         <CategoryButtonTitle>
           {activeCategory || "Category"}
         </CategoryButtonTitle>

@@ -23,7 +23,7 @@ export const EventDetailTitle = styled(MainTitle)`
 `;
 
 export const EventDetailWrapper = styled.div`
-  margin: 24px 0 auto;
+  margin: 24px auto;
 
   @media ${device.desktop} {
     width: 628px;

@@ -70,7 +70,6 @@ export const InputContainer = styled.div`
 `;
 
 export const Input = styled.input`
-  /* position: relative; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -116,7 +115,6 @@ export const SearchIcon = styled(FiSearch)`
   left: 12px;
 
   @media ${device.tablet} {
-    /* top: 8px; */
     left: 12px;
   }
 
