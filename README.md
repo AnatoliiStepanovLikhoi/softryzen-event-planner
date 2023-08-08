@@ -11,7 +11,7 @@ On the event details page, users can delete the event or watch all event details
 ## Create Event Page
 Users can also add new events by filling out an information form and choosing the priority and category of the event.
 
-Main Functionality
+## Main Functionality
 - Home Page: Displays cards of planned events.
 - Create Page: Features a form for creating a new event.
 - Details Page: Displays the description of the selected event.
