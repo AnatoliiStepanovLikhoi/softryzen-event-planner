@@ -32,7 +32,7 @@ Users can also add new events by filling out an information form and choosing th
 
 ## Implementation
 The project is developed using the React library.
-Created with Vite https://en.wikipedia.org/wiki/Vite_%28software%29#/media/File:Vitejs-logo.svg
+Created with Vite <img src="https://en.wikipedia.org/wiki/Vite_%28software%29#/media/File:Vitejs-logo.svg" alt="scss" width="30"/> 
 Managed state using Zustand.
 Custom backend simulation using mockapi.io.
 
