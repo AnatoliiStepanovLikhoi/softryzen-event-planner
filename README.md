@@ -1,4 +1,4 @@
-# Event Planner
+# Event Planner 📅
 
 Event Planner is a web application that allows users to plan and organize events.
 
@@ -12,9 +12,9 @@ On the event details page, users can delete the event or watch all event details
 Users can also add new events by filling out an information form and choosing the priority and category of the event.
 
 ## Main Functionality
-- Home Page: Displays cards of planned events.
-- Create Page: Features a form for creating a new event.
-- Details Page: Displays the description of the selected event.
+- Main Page: Displays cards of planned events.
+- Create Event Page: Features a form for creating a new event.
+- Event Details Page: Displays the description of the selected event.
 - Filtering: Users can filter event cards by category & by search input.
 - Back Button: All pages feature a "Back" button leading to the home page.
 - Handling Invalid Routes: Users are redirected to the home page if they access a non-existent route.
@@ -32,7 +32,7 @@ Users can also add new events by filling out an information form and choosing th
 
 ## Implementation
 The project is developed using the React library.
-Created with Vite.
+Created with Vite https://en.wikipedia.org/wiki/Vite_%28software%29#/media/File:Vitejs-logo.svg
 Managed state using Zustand.
 Custom backend simulation using mockapi.io.
 
