@@ -32,8 +32,11 @@ Users can also add new events by filling out an information form and choosing th
 
 ## Implementation
 The project is developed using the React library.
+
 Created with Vite.
+
 Managed state using Zustand.
+
 Custom backend simulation using mockapi.io.
 
 ## Getting Started
