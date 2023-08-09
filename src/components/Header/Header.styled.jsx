@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import { device } from "../../constants/deviceType/deviceType";
 import { FiSearch } from "react-icons/fi";
 
@@ -43,7 +44,7 @@ export const LanguageSelectContainer = styled.div`
   outline: none;
 `;
 
-export const Logo = styled.h1`
+export const Logo = styled(NavLink)`
   font-family: Alata;
   font-size: 24px;
   font-weight: 400;

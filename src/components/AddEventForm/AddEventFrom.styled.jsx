@@ -67,7 +67,8 @@ export const EventInput = styled.input`
 
   border-radius: 8px;
   border: 1px solid ${(props) => props.theme.colors.select.divider};
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    outline 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
   appearance: none;
   cursor: pointer;
@@ -91,7 +92,8 @@ export const EventTextareaInput = styled.textarea`
   border-radius: 8px;
   border: 1px solid ${(props) => props.theme.colors.select.divider};
   color: ${(props) => props.theme.colors.categoryTitle};
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    outline 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   cursor: pointer;
 
   &:focus,
@@ -112,7 +114,8 @@ export const EventSelect = styled.select`
 
   border-radius: 8px;
   border: 1px solid ${(props) => props.theme.colors.select.divider};
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    outline 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
   appearance: none;
   cursor: pointer;
@@ -159,6 +162,7 @@ export const EventFormButton = styled.button`
   border-radius: 8px;
   border: none;
   box-shadow: ${(props) => props.theme.colors.button.buttonShadow};
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
   &:focus,
   &:hover {
@@ -167,6 +171,7 @@ export const EventFormButton = styled.button`
 
   &:disabled {
     background-color: ${(props) => props.theme.colors.select.divider};
+    cursor: not-allowed;
   }
 
   @media ${device.tablet} {

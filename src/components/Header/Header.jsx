@@ -8,20 +8,14 @@ import {
 } from "./Header.styled";
 import LanguageSelect from "../LanguageSelect/LanguageSelect";
 import SearchInput from "../SearchInput/SearchInput";
-import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <HeaderBackground>
       <HeaderContainer>
-        <Logo>
-          <NavLink
-            to={"/"}
-            style={{ color: "#7B61FF" }}
-            aria-label="main page link"
-          >
-            Event Planner
-          </NavLink>
+        <h1 style={{ display: "none" }}>Event Planner</h1>
+        <Logo to={"/"} aria-label="main page link">
+          Event Planner
         </Logo>
 
         <LanguageSelectContainer>

@@ -19,8 +19,10 @@ export const AddEventBtn = styled(NavLink)`
   color: ${(props) => props.theme.colors.button.title};
   background-color: ${(props) => props.theme.colors.button.default};
   box-shadow: ${(props) => props.theme.colors.button.buttonShadow};
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: ${(props) => props.theme.colors.button.hover};
   }
 

@@ -25,8 +25,10 @@ export const CategoryBtn = styled.button`
   font-weight: 500;
   line-height: 1.5;
   box-shadow: ${(props) => props.theme.colors.button.buttonShadow};
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: ${(props) => props.theme.colors.button.default};
   }
 
@@ -79,6 +81,7 @@ export const CategoryDropdownItem = styled.li`
   font-style: normal;
   font-weight: 400;
   line-height: 1;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
   &:not(:last-child) {
     border-bottom: 1px solid ${(props) => props.theme.colors.button.disable};
@@ -89,6 +92,7 @@ export const CategoryDropdownItem = styled.li`
     color: ${(props) => props.theme.colors.button.default};
   }
 `;
+
 export const CategoryDropdownWrapper = styled.div`
   display: flex;
   gap: 16px;

@@ -20,7 +20,8 @@ export const SortBtn = styled.button`
   background: ${(props) => props.theme.colors.backgroundWhite};
   box-shadow: ${(props) => props.theme.colors.button.buttonShadow};
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: ${(props) => props.theme.colors.button.default};
   }
 

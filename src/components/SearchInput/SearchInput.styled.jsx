@@ -24,6 +24,7 @@ export const StyledInput = styled.input`
 
   border: none;
   z-index: 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
   @media ${device.tablet} {
     width: 368px;
@@ -48,8 +49,8 @@ export const ClearIcon = styled(IoClose)`
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-  cursor: pointer;
   color: ${(props) => props.theme.colors.accent};
+  cursor: pointer;
 
   width: 24px;
   height: 24px;

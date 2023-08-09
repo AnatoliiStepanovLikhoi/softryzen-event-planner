@@ -35,6 +35,7 @@ const CategoryButton = ({ handleFilterCategory }) => {
         ref={categoryButtonRef}
         onClick={handleClick}
         aria-label="fliter category"
+        type="button"
       >
         <CategoryButtonTitle>
           {activeCategory || "Category"}
