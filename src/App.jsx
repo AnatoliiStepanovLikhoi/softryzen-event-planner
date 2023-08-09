@@ -1,12 +1,19 @@
-// import { lazy } from "react";
+import { lazy } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import Background from "./constants/Background/Background.styled";
 import theme from "./constants/theme/theme";
-import SharedLayout from "./components/SharedLayout/SharedLayout";
-import MainPage from "./pages/MainPage/MainPage";
-import CreateEventPage from "./pages/CreateEventPage/CreateEventPage";
-import EventDetailPage from "./pages/EventDetailPage/EventDetailPage";
+
+const SharedLayout = lazy(() =>
+  import("./components/SharedLayout/SharedLayout")
+);
+const MainPage = lazy(() => import("./pages/MainPage/MainPage"));
+const CreateEventPage = lazy(() =>
+  import("./pages/CreateEventPage/CreateEventPage")
+);
+const EventDetailPage = lazy(() =>
+  import("./pages/EventDetailPage/EventDetailPage")
+);
 
 function App() {
   return (
