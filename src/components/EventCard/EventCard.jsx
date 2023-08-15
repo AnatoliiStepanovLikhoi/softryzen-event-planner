@@ -40,6 +40,7 @@ export const EventCard = ({ event }) => {
         <CardImage
           src={Object.keys(picture).length > 0 ? picture : defaultImage}
           alt={title ?? "event default image"}
+          loading="lazy"
         />
         <CateroryWrapper>
           <Category>{category}</Category>
